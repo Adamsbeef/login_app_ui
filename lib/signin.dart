@@ -33,7 +33,7 @@ class SignInPage extends StatelessWidget {
                 ],
               ),
               alignment: Alignment.center,
-              padding: EdgeInsets.only(top:20.0),
+              padding: EdgeInsets.only(top: 20.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20.0),
