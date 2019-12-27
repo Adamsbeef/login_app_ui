@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import "package:carousel_pro/carousel_pro.dart";
-import 'package:login_app/views.dart';
+import 'package:login_app/views/views.dart';
 
 class SignInPage extends StatelessWidget {
   @override
