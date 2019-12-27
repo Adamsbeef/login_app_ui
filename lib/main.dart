@@ -3,6 +3,7 @@ import 'package:login_app/signin.dart';
 
 void main(){
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Scaffold(
       backgroundColor: Colors.white,
       body: SignInPage(),
