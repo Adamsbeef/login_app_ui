@@ -1,12 +1,6 @@
 import "package:flutter/material.dart";
 import "package:carousel_pro/carousel_pro.dart";
-
-class Views extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return null;
-  }
-}
+import 'package:login_app/main.dart';
 
 final buttonWidth = 300.0;
 final buttonHeight = 50.0;
@@ -27,26 +21,29 @@ class SigInButtonFacebook extends StatelessWidget {
               alignment: Alignment.center,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 10.0),
-              child: RichText(
-                text: new TextSpan(
-                  // Note: Styles for TextSpans must be explicitly defined.
-                  // Child text spans will inherit styles from parent
-                  style: new TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.black,
+                padding: EdgeInsets.only(left: 10.0),
+                child: RichText(
+                  text: new TextSpan(
+                    // Note: Styles for TextSpans must be explicitly defined.
+                    // Child text spans will inherit styles from parent
+                    style: new TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      new TextSpan(text: "Sign up by "),
+                      new TextSpan(
+                          text: 'Facebook',
+                          style: new TextStyle(fontWeight: FontWeight.bold)),
+                    ],
                   ),
-                  children: <TextSpan>[
-                    new TextSpan(text: "Sign up by "),
-                    new TextSpan(text: 'Facebook',
-                        style: new TextStyle(fontWeight: FontWeight.bold)),
-                  ],
-                ),
-              )
-            )
+                ))
           ],
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddCard()));
+        },
         elevation: 6.0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         color: Colors.white,
@@ -82,16 +79,19 @@ class SigInButtonGoogle extends StatelessWidget {
                       ),
                       children: <TextSpan>[
                         new TextSpan(text: "Sign up by "),
-                        new TextSpan(text: 'Google',
+                        new TextSpan(
+                            text: 'Google',
                             style: new TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
-                  )
-              )
+                  ))
             ],
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddCard()));
+        },
         elevation: 6.0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         color: Colors.white,
@@ -153,21 +153,21 @@ class ImageCarousel extends StatelessWidget {
     return new Center(
         child: new SizedBox(
             child: Carousel(
-              boxFit: BoxFit.cover,
-              images: [
-                AssetImage("images/imageasset.png"),
-                AssetImage("images/imageasset.png"),
-                AssetImage("images/imageasset.png"),
-              ],
-              showIndicator: true,
-              indicatorBgPadding: 10.0,
-              overlayShadowColors: Colors.grey,
-              dotColor: Colors.orangeAccent,
-              dotBgColor: Colors.transparent,
-              moveIndicatorFromBottom: 0.0,
-              animationCurve: Curves.fastOutSlowIn,
-              animationDuration: Duration(milliseconds: 7000),
-            )));
+      boxFit: BoxFit.cover,
+      images: [
+        AssetImage("images/imageasset.png"),
+        AssetImage("images/imageasset.png"),
+        AssetImage("images/imageasset.png"),
+      ],
+      showIndicator: true,
+      indicatorBgPadding: 10.0,
+      overlayShadowColors: Colors.grey,
+      dotColor: Colors.orangeAccent,
+      dotBgColor: Colors.transparent,
+      moveIndicatorFromBottom: 0.0,
+      animationCurve: Curves.fastOutSlowIn,
+      animationDuration: Duration(milliseconds: 7000),
+    )));
   }
 }
 
@@ -180,7 +180,8 @@ var text = new RichText(
     children: <TextSpan>[
       new TextSpan(text: 'Sign up by'),
       new TextSpan(text: 'facevook'),
-      new TextSpan(text:  'Google', style: new TextStyle(fontWeight: FontWeight.bold)),
+      new TextSpan(
+          text: 'Google', style: new TextStyle(fontWeight: FontWeight.bold)),
     ],
   ),
 );
